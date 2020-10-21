@@ -1,6 +1,6 @@
 {
   "name": "formatify",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Simple text formatter for node.js and browser",
   "author": {
     "name": "Yuhsak Inoue",

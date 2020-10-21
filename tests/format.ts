@@ -22,4 +22,12 @@ describe('format', () => {
     expect(format(txt + ' {{c}}', {a: 'this', b: 'text', c: '.'})).toBe('this is a text {c}')
   })
 
+  test('syntax', () => {
+    const txt = '%a$ is a %b$'
+    expect(format(txt, {a: 'this', b: 'text'}, {begin: '%', end: '$'})).toBe('this is a text')
+    expect(format(txt, {a: 'this'}, {begin: '%', end: '$'})).toBe('this is a %b$')
+    expect(format(txt + ' %c$', {a: 'this', b: 'text', c: '.'}, {begin: '%', end: '$'})).toBe('this is a text .')
+    expect(format(txt + ' %%c$$', {a: 'this', b: 'text', c: '.'}, {begin: '%', end: '$'})).toBe('this is a text %c$')
+  })
+
 })
