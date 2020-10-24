@@ -1,0 +1,16 @@
+os: linux
+dist: focal
+language: node_js
+node_js:
+  - 12
+script: npm run test:ci
+deploy:
+  provider: npm
+  email: yuhsak.inoue@gmail.com
+  api_token:
+    secure: dT/aiOlsld39LF4Kx6KHDFaGJxSsitwKlUxHunxg+gaBP2/YryyHCF89VmIv9nht7eDgBVzwOFSzQgdzPo9zGyLl9gberEPlGdW3OG8vd+xbIL5VhF+OeFRpqoH9qmVX0D+8S+j1B4wjBvS4LgbRsbasIBBNQ9dWpp4lbxzgnoZOgCsyh7JLMXbUk+b5TfJ/s9QJlRYdj9akJ8VVgZrKwZrO3GmwmSGODqQ/Eo2Ii8HqOkjeQ8dX8/+wa661Ow5pByb72ukx8fMgyF/HAzIkxl167lKT1U+fkZyfAkw9PAKaXq+g4ELPecWYruMH8DW9esbRT42EL77gRbS4djKzXYIoqz5P9KjGYeUEsdQNTEJUQzJELyHtmLpmPvUsoEg/+ahspLsLTcghmr05JAxtgIGEweZf4jGrMHlh3BTqHXtvBcWSPwlx+/+7Wgb7KR6bFP53OMaWzHNG/LcbXf3ds1Q+mRkYXsKDbqXjmBZQKkmWENezlnIHoQMQySnN4oYVZ7atHF/cHVQl5SkLgagjMIv6QO/F2f0kULhIVDJ3GbM/WilQvKYIGcQ7s9TNEBhgp8eTmAZ0ObweEt1Xo5mrjfUFJ/zo2vU3sMvYWm804Yi88Q5M0fzJdtkJQiACxcmhwUoreSYaKwQ5VYVS5O/rYA1BbiBln906BnY5ML8zHiU=
+  on:
+    tags: true
+    repo: Yuhsak/formatify
+    branch: main
+  skip_cleanup: true

@@ -1,4 +1,4 @@
-# formatify
+# formatify [![Build Status](https://travis-ci.org/Yuhsak/formatify.svg?branch=main)](https://travis-ci.org/Yuhsak/formatify) [![Coverage Status](https://coveralls.io/repos/github/Yuhsak/formatify/badge.svg?branch=main)](https://coveralls.io/github/Yuhsak/formatify?branch=main)
 
 Simple text formatter for node.js and browser
 

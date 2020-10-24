@@ -20,6 +20,7 @@ describe('format', () => {
     expect(format(txt, {a: 'this'})).toBe('this is a {b}')
     expect(format(txt + ' {c}', {a: 'this', b: 'text', c: '.'})).toBe('this is a text .')
     expect(format(txt + ' {{c}}', {a: 'this', b: 'text', c: '.'})).toBe('this is a text {c}')
+    expect(format(txt + ' {{c}} {d}}', {a: 'this', b: 'text', c: '.', d: 'ignore'})).toBe('this is a text {c} {d}}')
   })
 
   test('syntax', () => {

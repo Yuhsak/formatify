@@ -1,6 +1,6 @@
 {
   "name": "formatify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple text formatter for node.js and browser",
   "author": {
     "name": "Yuhsak Inoue",
@@ -23,18 +23,25 @@
     "tsconfig.esm.json"
   ],
   "scripts": {
-    "test": "jest",
-    "clean": "rm -rf lib",
+    "clean:dist": "rimraf lib",
+    "clean:test": "rimraf coverage",
+    "clean": "run-p clean:*",
+    "pretest": "npm run clean:test",
+    "test": "jest --coverage",
+    "prebuild": "npm run clean:dist",
+    "build:watch": "npm run build -- --watch",
     "build": "tsc -b tsconfig.json tsconfig.esm.json",
-    "watch": "npm run build -- --watch",
-    "prebuild": "npm run clean",
     "start": "npm run watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test:ci": "npm run test && coveralls < coverage/lcov.info"
   },
   "devDependencies": {
-    "typescript": "^4.0.3",
+    "@types/jest": "^26.0.14",
+    "coveralls": "^3.1.0",
     "jest": "26.5.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.4.1",
-    "@types/jest": "^26.0.14"
+    "typescript": "^4.0.3"
   }
 }

@@ -18,6 +18,6 @@ export function format<T extends Array<any> | Record<string, any>>(text: string,
     if (_begin.length !== _end.length) return _match
     if (_begin.length !== begin.length) return `${begin}${_key}${end}`
     // @ts-ignore
-    return replacer?.[_key] === void (0) ? _match : replacer?.[_key]
+    return replacer && replacer[_key] || _match
   })
 }
