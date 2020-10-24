@@ -31,7 +31,7 @@
     "prebuild": "npm run clean:dist",
     "build:watch": "npm run build -- --watch",
     "build": "tsc -b tsconfig.json tsconfig.esm.json",
-    "start": "npm run watch",
+    "start": "npm run build:watch",
     "prepublishOnly": "npm run build",
     "test:ci": "npm run test && coveralls < coverage/lcov.info"
   },
